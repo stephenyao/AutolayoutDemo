@@ -13,18 +13,14 @@ class View: UIView {
     var blueView : UIView?
     var redView : UIView?
     
-    override init() {
-        super.init()
-        self.backgroundColor = UIColor.whiteColor()
-        self.setupView()
-    }
-    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = UIColor.whiteColor()
+        self.setupView()
     }
     
     func setupView() {
@@ -59,7 +55,6 @@ class View: UIView {
         let redViewHeightConstraint = NSLayoutConstraint(item: self.redView!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 100)
         
         self.addConstraints([redViewCenterXConstraint,redViewBottomConstraint,redViewWidthConstraint,redViewHeightConstraint])
-
     }
 
 }

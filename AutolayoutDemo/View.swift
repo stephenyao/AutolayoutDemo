@@ -20,7 +20,9 @@ class View: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.whiteColor()
-        self.setupView()
+//        setupViewWithVisualFormat()
+        setupViewWithConveninceMethods()
+        
     }
     
     func setupView() {
@@ -57,4 +59,61 @@ class View: UIView {
         self.addConstraints([redViewCenterXConstraint,redViewBottomConstraint,redViewWidthConstraint,redViewHeightConstraint])
     }
 
+    func setupViewWithVisualFormat() {
+        self.blueView = UIView()
+        self.blueView?.backgroundColor = UIColor.blueColor()
+        self.blueView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.addSubview(self.blueView!)
+        
+        self.redView = UIView()
+        self.redView?.backgroundColor = UIColor.redColor()
+        self.redView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.addSubview(self.redView!)
+
+        let views = [
+            "redView" : self.redView!,
+            "blueView" : self.blueView!
+        ]
+        
+        let redViewHorizontalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[redView(100)]", options: nil, metrics: nil, views: views)
+        
+        let blueViewHorizontalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("H:[blueView(200)]", options: nil, metrics: nil, views: views)
+        let blueViewCenterXConstraint = NSLayoutConstraint(item: self.blueView!, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0)
+        let blueViewCenterYConstraint = NSLayoutConstraint(item: self.blueView!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0)
+        
+        let redViewVerticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:[redView(100)]", options: nil, metrics: nil, views: views)
+        let blueViewVerticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:[blueView(200)]", options: nil, metrics: nil, views: views)
+        
+        let verticalConstraint = NSLayoutConstraint.constraintsWithVisualFormat("V:[redView(100)]-0-[blueView(200)]", options: NSLayoutFormatOptions.AlignAllCenterX, metrics: nil, views: views)
+        
+        self.addConstraints(redViewHorizontalConstraint)
+        self.addConstraints(blueViewHorizontalConstraint)
+        self.addConstraint(blueViewCenterXConstraint)
+        self.addConstraint(blueViewCenterYConstraint)
+        
+        self.addConstraints(verticalConstraint)
+    }
+    
+    func setupViewWithConveninceMethods() {
+        self.blueView = UIView()
+        self.blueView?.backgroundColor = UIColor.blueColor()
+        self.blueView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.addSubview(self.blueView!)
+        
+        self.redView = UIView()
+        self.redView?.backgroundColor = UIColor.redColor()
+        self.redView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.addSubview(self.redView!)
+        
+        self.addConstraints(self.blueView!.centerHorizontallyTo(self))
+        self.addConstraints(self.blueView!.centerVerticallyTo(self))
+        self.addConstraints(self.blueView!.constrainHeight(200))
+        self.addConstraints(self.blueView!.constrainWidth(200))
+        
+        self.addConstraints(self.redView!.anchorToTop(self.blueView!, padding: 0))
+        self.addConstraints(self.redView!.centerHorizontallyTo(self.blueView!))
+        self.addConstraints(self.redView!.constrainWidth(100))
+        self.addConstraints(self.redView!.constrainHeight(100))
+    }
+    
 }

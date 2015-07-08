@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD87BCF81B4D59A300A6457D /* UIViewAutoLayoutExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87BCF71B4D59A300A6457D /* UIViewAutoLayoutExtension.swift */; };
 		DDC55ED71A4E9FA700247877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC55ED61A4E9FA700247877 /* AppDelegate.swift */; };
 		DDC55EDA1A4E9FA700247877 /* AutolayoutDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDC55ED81A4E9FA700247877 /* AutolayoutDemo.xcdatamodeld */; };
 		DDC55EDC1A4E9FA700247877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC55EDB1A4E9FA700247877 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD87BCF71B4D59A300A6457D /* UIViewAutoLayoutExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAutoLayoutExtension.swift; sourceTree = "<group>"; };
 		DDC55ED11A4E9FA700247877 /* AutolayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutolayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC55ED51A4E9FA700247877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDC55ED61A4E9FA700247877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				DDC55EE21A4E9FA700247877 /* LaunchScreen.xib */,
 				DDC55ED81A4E9FA700247877 /* AutolayoutDemo.xcdatamodeld */,
 				DDC55ED41A4E9FA700247877 /* Supporting Files */,
+				DD87BCF71B4D59A300A6457D /* UIViewAutoLayoutExtension.swift */,
 			);
 			path = AutolayoutDemo;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				DDC55EDC1A4E9FA700247877 /* ViewController.swift in Sources */,
 				DDC55ED71A4E9FA700247877 /* AppDelegate.swift in Sources */,
 				DDC55EDA1A4E9FA700247877 /* AutolayoutDemo.xcdatamodeld in Sources */,
+				DD87BCF81B4D59A300A6457D /* UIViewAutoLayoutExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +417,7 @@
 				DDC55EF51A4E9FA800247877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDC55EF61A4E9FA800247877 /* Build configuration list for PBXNativeTarget "AutolayoutDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				DDC55EF81A4E9FA800247877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
